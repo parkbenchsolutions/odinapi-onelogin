@@ -2,7 +2,7 @@
   "name": "parkbenchsolutions/odinapi-onelogin",
   "description": "Park Bench SAML2 client using OneLogin PHP SAML Toolkit",
   "version": "0.1",
-  "minimum-stability": "0.0",
+  "minimum-stability": "dev",
   "license": "MIT",
   "homepage": "https://developers.onelogin.com/saml/php",
   "keywords": [
