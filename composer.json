@@ -12,7 +12,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Parkbenchsolutions\\OdinapiOnelogin\\": "src/"
+      "Parkbenchsolutions\\OdinapiOnelogin\\": "src"
     }
   },
   "require": {
