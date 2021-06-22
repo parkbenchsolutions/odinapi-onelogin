@@ -278,6 +278,8 @@ class Response
                             );
                         }
                     } else {
+                        $destination = parse_url($destination, PHP_URL_HOST) . parse_url($destination, PHP_URL_PATH);
+                        $currentURL = parse_url($currentURL, PHP_URL_HOST) . parse_url($currentURL, PHP_URL_PATH);
                         $urlComparisonLength = $security['destinationStrictlyMatches'] ? strlen($destination) : strlen($currentURL);
                         if (strncmp($destination, $currentURL, $urlComparisonLength) !== 0) {
                             $currentURLNoRouted = Utils::getSelfURLNoQuery();
