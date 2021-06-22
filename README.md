@@ -1,6 +1,3 @@
-# odinapi-onelogin
-Onelogin SAML2 Client
-
 # OneLogin's SAML PHP Toolkit
 
 [![Build Status](https://api.travis-ci.org/onelogin/php-saml.png?branch=master)](http://travis-ci.org/onelogin/php-saml) [![Coverage Status](https://coveralls.io/repos/onelogin/php-saml/badge.png)](https://coveralls.io/r/onelogin/php-saml) [![License](https://poser.pugx.org/onelogin/php-saml/license.png)](https://packagist.org/packages/onelogin/php-saml)
@@ -23,7 +20,7 @@ Version 2.17.0 sets strict mode active by default
 
 Update php-saml to 2.15.0, this version includes a security patch related to XEE attacks
 
-php-saml is not affected by [201803-01](https://simplesamlphp.org/security/201803-01)
+php-saml is not affected by [201803-01](https://simplesamlphp.org/security/201803-01) 
 
 Update php-saml to 2.10.4, this version includes a security patch related to
 [signature validations on LogoutRequests/LogoutResponses](https://github.com/onelogin/php-saml/commit/949359f5cad5e1d085c4e5447d9aa8f49a6e82a1)
@@ -395,7 +392,7 @@ $settings = array (
             'url' => '',
             // URL location of the IdP where the SP will send the SLO Response (ResponseLocation)
             // if not set, url for the SLO Request will be used
-            'responseUrl' => '',
+            'responseUrl' => '',            
             // SAML protocol binding to be used when returning the <Response>
             // message. OneLogin Toolkit supports the HTTP-Redirect binding
             // only for this endpoint.
@@ -1185,9 +1182,9 @@ $needsAuth = empty($_SESSION['samlUserdata']);
 
 if ($needsAuth) {
     // put SAML settings into an array to avoid placing files in the
-    // composer vendor/ directories
+    // composer vendor/ directories 
     $samlsettings = array(/*...config goes here...*/);
-
+    
     $auth = new \OneLogin\Saml2\Auth($samlsettings);
 
     if (!empty($_REQUEST['SAMLResponse']) && !empty($_REQUEST['RelayState'])) {
