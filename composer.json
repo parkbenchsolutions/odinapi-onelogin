@@ -1,38 +1,50 @@
 {
-    "name": "parkbenchsolutions/odinapi-onelogin",
-    "description": "Park Bench SAML2 client implementing OneLogin PHP SAML Toolkit",
-    "license": "copywrite Park Bench Solutions Inc",
-    "homepage": "https://developers.onelogin.com/saml/php",
-    "keywords": ["saml", "saml2", "onelogin"],
-    "autoload": {
-        "classmap": [
-            "extlib/xmlseclibs",
-            "lib/Saml",
-            "lib/Saml2"
-        ]
-    },
-    "support": {
-        "email": "support@parkbenchsolutions.com",
-        "issues": "https://github.com/onelogin/php-saml/issues",
-        "source": "https://github.com/onelogin/php-saml/"
-    },
-    "require": {
-        "php": ">=5.3.2 <7.2",
-        "ext-curl": "*",
-        "ext-openssl": "*",
-        "ext-dom": "*",
-        "ext-mcrypt": "*",
-        "ext-zlib": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "4.8",
-        "satooshi/php-coveralls": "1.0.1",
-        "sebastian/phpcpd": "*",
-        "phploc/phploc": "*",
-        "pdepend/pdepend" : "1.1.0",
-        "squizlabs/php_codesniffer": "2.9.0"
-    },
-    "suggest": {
-        "ext-gettext": "Install gettext and php5-gettext libs to handle translations"
+  "name": "parkbenchsolutions/odinapi-onelogin",
+  "description": "Park Bench SAML2 client implementing OneLogin PHP SAML Toolkit",
+  "license": "copywrite Park Bench Solutions Inc",
+  "homepage": "https://developers.onelogin.com/saml/php",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Park Bench Solutions",
+      "email": "support@parkbenchsolutions.com"
     }
+  ],
+  "keywords": [
+    "saml",
+    "saml2",
+    "onelogin"
+  ],
+  "autoload": {
+    "classmap": [
+      "extlib/xmlseclibs",
+      "lib/Saml",
+      "lib/Saml2"
+    ]
+  },
+  "support": {
+    "email": "support@parkbenchsolutions.com",
+    "issues": "https://github.com/onelogin/php-saml/issues",
+    "source": "https://github.com/onelogin/php-saml/"
+  },
+  "require": {
+    "php": ">=5.3.2",
+    "ext-curl": "*",
+    "ext-openssl": "*",
+    "ext-dom": "*",
+    "ext-mcrypt": "*",
+    "ext-zlib": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8",
+    "satooshi/php-coveralls": "1.0.1",
+    "sebastian/phpcpd": "*",
+    "phploc/phploc": "*",
+    "pdepend/pdepend": "1.1.0",
+    "squizlabs/php_codesniffer": "2.9.0"
+  },
+  "suggest": {
+    "ext-gettext": "Install gettext and php5-gettext libs to handle translations"
+  },
+  "minimum-stability": "dev"
 }
