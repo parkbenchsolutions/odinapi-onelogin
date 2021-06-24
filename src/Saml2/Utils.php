@@ -450,7 +450,7 @@ class Utils
             <html><head><meta charset="utf-8"/><title>Redirecting...</title></head>
             <body><form id="form" action="%s" method="post" enctype="application/x-www-form-urlencoded">%s
             <noscript><button type="submit">Click to continue</button></noscript></form>
-            <script>document.getElementById("form").submit();</script></body></html>', 
+            <script>document.getElementById("form").submit();</script></body></html>',
             htmlspecialchars($url, ENT_QUOTES, 'utf-8'), join('', $fields)
         );
 

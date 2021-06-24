@@ -576,7 +576,7 @@ class Auth
         }
 
         $url = $this->getSSOurl();
-        return ($binding === Constants::BINDING_HTTP_POST) 
+        return ($binding === Constants::BINDING_HTTP_POST)
             ? $this->post($url, $parameters, $stay)
             : $this->redirectTo($url, $parameters, $stay);
     }
@@ -650,7 +650,7 @@ class Auth
 
     /**
      * Gets SSO binding type
-     * 
+     *
      * @return string
      */
     public function getSSOBinding()

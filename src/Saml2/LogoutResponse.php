@@ -132,7 +132,7 @@ class LogoutResponse extends AbstractResponse
         }
 
         /** @var \DOMElement */
-        $node = $entries->item(0); 
+        $node = $entries->item(0);
         return $node->getAttribute('Value');
     }
 

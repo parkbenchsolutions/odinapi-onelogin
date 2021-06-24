@@ -3,6 +3,13 @@
   "description": "Park Bench version of Workivate version of OneLogin PHP SAML Toolkit",
   "license": "MIT",
   "homepage": "https://developers.onelogin.com/saml/php",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "Park Bench Solutions",
+      "email": "support@parkbenchsolutions.com"
+    }
+  ],
   "keywords": [
     "saml",
     "saml2",
