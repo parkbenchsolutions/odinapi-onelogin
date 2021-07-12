@@ -15,7 +15,7 @@
 
 namespace OneLogin\Saml2;
 
-use Parkbenchsolutions\XMLSecLibs\XMLSecurityKey;
+use XMLSecLibs\XMLSecurityKey;
 
 use Exception;
 
