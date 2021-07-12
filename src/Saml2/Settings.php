@@ -14,9 +14,8 @@
  */
 
 namespace OneLogin\Saml2;
-
-use RobRichards\XMLSecLibs\XMLSecurityKey;
-use RobRichards\XMLSecLibs\XMLSecurityDSig;
+use Parkbenchsolutions\XMLSecLibs\XMLSecurityKey;
+use Parkbenchsolutions\XMLSecLibs\XMLSecurityDSig;
 
 use DOMDocument;
 use Exception;
