@@ -15,8 +15,8 @@
 
 namespace OneLogin\Saml2;
 
-use RobRichards\XMLSecLibs\XMLSecurityKey;
-use RobRichards\XMLSecLibs\XMLSecEnc;
+use Parkbenchsolutions\XMLSecLibs\XMLSecurityKey;
+use Parkbenchsolutions\XMLSecLibs\XMLSecEnc;
 
 use DOMDocument;
 use DOMElement;

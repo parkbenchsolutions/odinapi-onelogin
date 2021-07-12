@@ -23,9 +23,9 @@ use DOMNodeList;
 use DOMXPath;
 use Exception;
 use InvalidArgumentException;
-use RobRichards\XMLSecLibs\XMLSecEnc;
-use RobRichards\XMLSecLibs\XMLSecurityDSig;
-use RobRichards\XMLSecLibs\XMLSecurityKey;
+use Parkbenchsolutions\XMLSecLibs\XMLSecEnc;
+use Parkbenchsolutions\XMLSecLibs\XMLSecurityDSig;
+use Parkbenchsolutions\XMLSecLibs\XMLSecurityKey;
 
 /**
  * Utils of OneLogin PHP Toolkit
