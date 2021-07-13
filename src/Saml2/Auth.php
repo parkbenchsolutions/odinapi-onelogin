@@ -619,6 +619,9 @@ class Auth
         $this->_lastRequest = $logoutRequest->getXML();
         $this->_lastRequestID = $logoutRequest->id;
 
+        $binding = $this->getSLOBinding();
+        $deflate = $binding === Constants::BINDING_HTTP_POST ? false : null;
+
         $samlRequest = $logoutRequest->getRequest();
 
         $parameters['SAMLRequest'] = $samlRequest;
@@ -630,12 +633,22 @@ class Auth
 
         $security = $this->_settings->getSecurityData();
         if (isset($security['logoutRequestSigned']) && $security['logoutRequestSigned']) {
-            $signature = $this->buildRequestSignature($samlRequest, $parameters['RelayState'], $security['signatureAlgorithm']);
-            $parameters['SigAlg'] = $security['signatureAlgorithm'];
-            $parameters['Signature'] = $signature;
+            switch ($binding) {
+                case Constants::BINDING_HTTP_REDIRECT:
+                    $signature = $this->buildRequestSignature($samlRequest, $parameters['RelayState'], $security['signatureAlgorithm']);
+                    $parameters['SigAlg'] = $security['signatureAlgorithm'];
+                    $parameters['Signature'] = $signature;
+                    break;
+                case Constants::BINDING_HTTP_POST:
+                    $parameters['SAMLRequest'] = $this->buildEmbeddedSignature($logoutRequest->getXML(), $security['signatureAlgorithm']);
+                    break;
+                default:
+                    throw new Error(sprintf('Signing of SingleLogoutRequest is unsupported for this binding (%s)', $this->getSLOBinding()), Error::UNSUPPORTED_SETTINGS_OBJECT);
+            }
         }
-
-        return $this->redirectTo($sloUrl, $parameters, $stay);
+        return ($binding === Constants::BINDING_HTTP_POST)
+            ? $this->post($sloUrl, $parameters, $stay)
+            : $this->redirectTo($sloUrl, $parameters, $stay);
     }
 
     /**
@@ -667,6 +680,17 @@ class Auth
     public function getSLOurl(): ?string
     {
         return $this->_settings->getIdPSLOUrl();
+    }
+
+    /**
+     * Gets SSO binding type
+     *
+     * @return string
+     */
+    public function getSLOBinding()
+    {
+        $idpData = $this->_settings->getIdPData();
+        return $idpData['singleLogoutService']['binding'];
     }
 
     /**
