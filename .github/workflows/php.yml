@@ -95,12 +95,12 @@ jobs:
           fetch-depth: 0
 
       - name: Download clover.xml
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: clover.xml
 
       - name: Download junit.xml
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: junit.xml
 
