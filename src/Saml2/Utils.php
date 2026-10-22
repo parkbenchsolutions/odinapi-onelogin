@@ -1418,8 +1418,8 @@ class Utils
             throw new Exception('Unsupported signing algorithm.');
         }
 
-        if (!is_resource($key->key)) {
-            throw new InvalidArgumentException('$key->key is not a resource');
+        if (!is_resource($key->key) && !($key->key instanceof \OpenSSLAsymmetricKey)) {
+            throw new InvalidArgumentException('$key->key is not a resource or OpenSSLAsymmetricKey');
         }
 
         $keyInfo = openssl_pkey_get_details($key->key);
